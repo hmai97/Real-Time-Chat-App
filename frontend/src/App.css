@@ -1,5 +1,6 @@
+
 body {
-  background-image: url('./assets/valley.jpeg');
+  background-color: whitesmoke;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -10,20 +11,22 @@ body {
 .background {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(75deg, rgb(20, 23, 33) 0%, rgb(20, 23, 33) 50%, rgba(20, 23, 33,0.8) 100%);
+ /* background: linear-gradient(75deg, rgb(20, 23, 33) 0%, rgb(20, 23, 33) 50%, rgba(20, 23, 33,0.8) 100%);
   /* Vertical center */
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
   display: table-cell;
   vertical-align: middle;
 }
 
 .form-card {
   width: 50%;
-  max-width: 350px;
+  max-width: 550px;
   padding: 0% 25% 0% 25%;
 }
 
 .form-title { 
-  font-size: 42px; 
+  font-size: 55px; 
   font-family: 'Avenir'; 
   font-weight: 800; 
   letter-spacing: 0.5px; 
@@ -32,10 +35,10 @@ body {
 }
 
 .form-subtitle {
-  font-size: 18px;
+  font-size: 25px;
   font-family: 'Avenir';
   letter-spacing: 0.5px;
-  color: #afafaf;
+  color: purple;
   padding-bottom: 24px;
 }
 
@@ -50,26 +53,26 @@ body {
   top: 8px;
   left: 18px;
   font-size: 11px;
-  color: rgb(175, 175, 175);
+  color: black;
   font-family: Avenir;
   width: 100px;
 }
 .auth-input {
-  background-color: #3e404b;
-  color: white;
+  background-color: pink;
+  color: black;
   font-family: "Avenir";
   outline: none;
   border: none;
   border-radius: 8px;
   padding: 24px 18px 12px 18px;
-  width: calc(100% - 18px - 18px);
+  width: 54%;
   margin-bottom: 12px;
 }
 .auth-button {
-  width: 100%;
+  width: 40%;
   height: 53px;
   color: white;
-  background-color: #fa541c;
+  background-color: gray;
   border: none;
   outline: none;
   border-radius: 8px;
@@ -88,3 +91,164 @@ body {
   color: white; 
   background: rgb(43, 47, 60);
 }
+  
+/*
+body {
+  background-color: whitesmoke;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-card {
+  width: 50%;
+  max-width: 550px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+ /* border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-title { 
+  font-size: 35px; 
+  font-family: 'Avenir'; 
+  font-weight: 800; 
+  letter-spacing: 0.5px; 
+  color: #333; 
+  padding-bottom: 12px; 
+  text-align: center;
+}
+
+.form-subtitle {
+  font-size: 20px;
+  font-family: 'Avenir';
+  letter-spacing: 0.5px;
+  color: purple;
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+.auth {
+  width: 100%;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.auth-label {
+  display: block;
+  font-size: 14px;
+  color: black;
+  font-family: Avenir;
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+.auth-input {
+  background-color: pink;
+  color: black;
+  font-family: "Avenir";
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.auth-button {
+  width: 100%;
+  height: 50px;
+  color: white;
+  background-color: gray;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-family: "Avenir";
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.auth-button:hover {
+  filter: brightness(125%);
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: 'Avenir';
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+.toggle-button:hover {
+  color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Wrapper specific styles */
+/*.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.form {
+  background-color: rgba(255, 255, 255, 0.95); /* Adjusted for a cleaner look */
+ /* padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: darkgray;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+*/
