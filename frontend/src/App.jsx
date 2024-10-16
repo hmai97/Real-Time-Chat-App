@@ -13,7 +13,7 @@ function App() {
   if (!user) {
     return <AuthPage onAuth={(user) => setUser(user)} />;
   } else {
-    return <ChatsPage user={user} onSignout={handleSignOut} />;
+    return <ChatsPage user={user} onSignOut={handleSignOut} />;
   }
 }
 

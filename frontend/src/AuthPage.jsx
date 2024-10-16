@@ -45,6 +45,7 @@ const AuthPage = (props) => {
 
   return (
     <div className="login-page">
+      <h1 className="welcome-title">WELCOME TO MAI CHAT</h1>
       <div className="card">
         {/* Login Form */}
         <form onSubmit={onLogin}>
