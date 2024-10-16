@@ -1,26 +1,25 @@
-const express = require("express"); //our http server
-const cors = require("cors"); // call this from any other origin
-const axios = require('axios');
+const express = require("express");
+const cors = require("cors");
+const axios = require("axios");
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: true }));
-//rest.chatengine.io for docs
+
 app.post("/signup", async (req, res) => {
   const { username, secret, email, first_name, last_name } = req.body;
 
-  // console.log("Write user into DB.");
-  // return res.json({ user: {} });
-
-  // Store a user-copy on Chat Engine!
   try {
     const r = await axios.post(
       "https://api.chatengine.io/users/",
-      { username:username, secret:secret, email:email, first_name:first_name, last_name:last_name },
+      { username, secret, email, first_name, last_name },
       { headers: { "Private-Key": "8433100e-d9ff-4723-ab7f-62fdd19ba856" } }
     );
     return res.status(r.status).json(r.data);
   } catch (e) {
-    return res.status(e.response.status).json(e.response.data);
+    console.error("Error during signup:", e.response ? e.response.data : e.message); // More detailed logging
+    return res.status(e.response ? e.response.status : 500).json({
+      message: e.response ? e.response.data : "Internal Server Error",
+    });
   }
 });
 
@@ -44,20 +43,6 @@ app.post("/login", async (req, res) => {
     return res.status(e.response.status).json(e.response.data);
   }
 });
-/*
-app.post("/authenticate", async (req, res) => {
-  const { username,secret } = req.body; //take username from req body
-  
-  try {
-    const r = await axios.put(
-      'https://api.chatengine.io/users/',
-      {username: username, secret: secret, first_name: username},
-      {headers :{"private-key" : "8433100e-d9ff-4723-ab7f-62fdd19ba856"}}
-    )
-      return res.status(r.status).json(r.data)
-    } catch(e){
-      return res.status(e.response.status).json(e.response.data)
-    }
-  });
-*/
-app.listen(3001); //port 3001 
+
+// Docs at rest.chatengine.io
+app.listen(3001);
